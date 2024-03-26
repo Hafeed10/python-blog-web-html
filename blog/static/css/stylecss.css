@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header .wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header h1 .left{
+    width: 100%;
+}
+
+header h1 a img{
+    display: block;
+    width: 100px;
+}
+
+.rigth span{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.rigth a{
+    background-color: rgb(104, 101, 101);
+    text-decoration: none;
+    padding: 10px;
+    margin-left: 20px;
+    width: 100px;
+    color: #fff;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static  %}
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=<device-width>, initial-scale=1.0"
+        />
+
+        <link rel="stylesheet" href="{% static './css/auth-style.css' %}" />
+
+        <title>{{title}}</title>
+    </head>
+    <body>
+        <section class="container">
+            <section class="form_container">
+                <div class="top">
+                    <h5>Login Page</h5>
+                </div>
+                <div class="bottom">
+                    <form action="" method="post">
+                        {% csrf_token %} 
+                        <div class="input_container">
+                            <label for="id_first_name"> First name </label>
+                            <input type="text" name="first_name" maxlength="150" id="id_first_name">
+                        </div>
+                        
+                        <div class="input_container">
+                            <label for="id_last_name"> Last name </label>
+                            <input type="text" name="last_name" maxlength="150" id="id_last_name">
+                        </div>
+                        
+                        <div class="input_container">
+                            <label for="id_email"> Email address </label>
+                            <input type="email" name="email" maxlength="254" id="id_email">
+                        </div>
+                        
+                        <div class="input_container">
+                            <label for="id_username"> Username </label>
+                            <input type="text" name="username" maxlength="150" required id="id_username">
+                        </div>
+                        
+                        <div class="input_container">
+                            <label for="id_password"> Password </label>
+                            <input type="password" name="password" class="hello hi"  placeholder="Enter strong password" maxlength="128" required id="id_password">
+                        </div>
+                        
+
+                        <div class="submit_container">
+                            
+                            <button type="submit">Create Account</button>
+                            {% if error %}
+                            <p class="error-message">
+                                {{message}}
+                            </p>
+                            {% endif %}
+                            <a href="{% url 'users:login' %}">Login</a>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </section>
+    </body>
+</html>
